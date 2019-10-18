@@ -1,0 +1,15 @@
+@include importFont('Montserrat', 300) {
+  src: url('../../public/fonts/ttf/Montserrat-Light.ttf') format('truetype');
+}
+
+@include importFont('Montserrat', 400) {
+  src: url('../../public/fonts/ttf/Montserrat-Regular.ttf') format('truetype');
+}
+
+@include importFont('Montserrat', 600) {
+  src: url('../../public/fonts/ttf/Montserrat-SemiBold.ttf') format('truetype');
+}
+
+@include importFont('Montserrat', 700) {
+  src: url('../../public/fonts/ttf/Montserrat-Bold.ttf') format('truetype');
+}

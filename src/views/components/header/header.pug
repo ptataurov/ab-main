@@ -1,0 +1,28 @@
+mixin header(mixes)
+  - const links = require('../../../assets/data/links.js')
+
+  header.header(class=(mixes) && `${mixes}__header`)
+    .header__wrap
+      .header__logo-container
+        img.header__logo(src=require('../../../assets/img/logo.svg') alt='Логотип')
+
+      button.header__toggle-btn
+        span
+        span
+        span
+      
+      .header__mobile-container
+        nav.header__nav
+          each link in links
+            a.header__nav-link(href=`${link.href}`)= `${link.label}`
+
+        .header__bar
+          .header__social-links
+            a.header__social-link(href='#')
+              include ~@/../assets/img/icon-fb.svg
+            a.header__social-link(href='#')
+              include ~@/../assets/img/icon-vk.svg
+            a.header__social-link(href='#')
+              include ~@/../assets/img/icon-insta.svg
+
+          a.header__login-link(href='#') Вход

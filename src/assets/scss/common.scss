@@ -1,0 +1,10 @@
+@import '~normalize.css/normalize.css';
+@import 'vars';
+@import 'mixins';
+@import 'fonts';
+@import 'reset';
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+}
