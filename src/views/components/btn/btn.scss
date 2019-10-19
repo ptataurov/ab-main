@@ -1,0 +1,34 @@
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 30px;
+  color: #fff;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 1;
+  background: #e53654;
+  border-radius: 25px;
+
+  &:hover {
+    background: #5ad5a1;
+  }
+}
+
+// Media queries
+
+@include less-xl {
+}
+
+@include less-lg {
+}
+
+@include less-md {
+}
+
+@include less-sm {
+}
+
+// Mixes
+
+// Animation

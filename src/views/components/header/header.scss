@@ -13,8 +13,11 @@
 
 .header__logo-container {
   z-index: 10;
-  display: flex;
   flex-basis: 33.333333%;
+}
+
+.header__logo-link {
+  display: flex;
   align-items: center;
 }
 
@@ -77,6 +80,10 @@
   &:not(:last-child) {
     margin-right: 60px;
   }
+
+  &:hover {
+    color: #e53654;
+  }
 }
 
 .header__bar {
@@ -96,6 +103,10 @@
   &:not(:last-child) {
     margin-right: 10px;
   }
+
+  &:hover {
+    transform: translateY(-2px);
+  }
 }
 
 .header__login-link {
@@ -104,7 +115,7 @@
   font-weight: 600;
   font-size: 14px;
   border: 2px solid #5ad5a1;
-  border-radius: 20px;
+  border-radius: 25px;
 
   &:hover {
     color: #fff;
@@ -149,7 +160,6 @@
     flex-direction: column;
     height: 100vh;
     padding: 90px 0 40px;
-    // background-color: #333;
     background-color: #000;
     transform: translateX(110%);
     transition: transform 300ms ease-out;
@@ -161,6 +171,22 @@
     &--show {
       box-shadow: -5px 0px 10px 0px rgba(0, 0, 0, 0.5);
       transform: translateX(0);
+
+      .header__nav-link {
+        $links: (
+          1: 250ms,
+          2: 400ms,
+          3: 500ms
+        );
+
+        @each $num, $delay in $links {
+          &:nth-child(#{$num}) {
+            transform: translateY(0);
+            opacity: 1;
+            transition-delay: $delay;
+          }
+        }
+      }
     }
   }
 
@@ -176,7 +202,11 @@
     font-weight: 400;
     font-size: 20px;
     text-align: center;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    // border-bottom: 2px solid rgba(255, 255, 255, 0.15);
+    transform: translateY(20%);
+    opacity: 0;
+    transition-timing-function: cubic-bezier(0.18, 0.6, 0.38, 0.84);
+    transition-duration: 800ms;
 
     &:not(:last-child) {
       margin-right: 0;

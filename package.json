@@ -10,10 +10,14 @@
     "dev:afterEnv": "webpack-dev-server",
     "build": "cross-env NODE_ENV=production npm run build:afterEnv",
     "build:afterEnv": "rm -rf ./dist && webpack -p",
-    "create::component": "node ./build/npmScripts/createComponent.js",
     "create::page": "node ./build/npmScripts/createPage.js",
+    "create::component": "node ./build/npmScripts/createComponent.js",
+    "delete::page": "node ./build/npmScripts/deletePage.js",
     "delete::component": "node ./build/npmScripts/deleteComponent.js",
-    "delete::page": "node ./build/npmScripts/deletePage.js"
+    "c::p": "npm run create::page",
+    "c::c": "npm run create::component",
+    "d::p": "npm run delete::page",
+    "d::c": "npm run delete::component"
   },
   "keywords": [],
   "author": "Pavel Tataurov",

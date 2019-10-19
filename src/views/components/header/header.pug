@@ -4,7 +4,8 @@ mixin header(mixes)
   header.header(class=(mixes) && `${mixes}__header`)
     .header__wrap
       .header__logo-container
-        img.header__logo(src=require('../../../assets/img/logo.svg') alt='Логотип')
+        a.header__logo-link(href='index.html')
+          img.header__logo(src=require('../../../assets/img/logo.svg') alt='Логотип')
 
       button.header__toggle-btn
         span

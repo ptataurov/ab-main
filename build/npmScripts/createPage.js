@@ -36,7 +36,7 @@ block title
 
 block content
 
-  - const data = require('./data.json')
+  - const data = require('./data.js')
 
   #${name}-pg
 
@@ -44,7 +44,7 @@ block content
 )
 
 writeFileSync(
-  `${pagePath}/data.json`,
+  `${pagePath}/data.js`,
   `{
     
 }`
