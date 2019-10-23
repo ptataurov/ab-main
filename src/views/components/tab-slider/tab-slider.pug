@@ -1,0 +1,25 @@
+mixin tab-slider(data, mixes)
+
+  .tab-slider(class=(mixes) && `${mixes}__tab-slider`)
+
+    h3.tab-slider__title= data.title
+
+    p.tab-slider__subtitle= data.subtitle
+
+    .tab-slider__tabs
+      
+        nav.tab-slider__tabs-nav
+          .tab-slider__tabs-nav-container
+            each tab, idx in data.tabs
+              button.tab-slider__tab(data-target=`${idx}` class=(idx === 0 && 'tab-slider__tab--active'))= tab.label
+          
+        .tab-slider__tab-content
+          .tab-slider__img-container
+            each tab, idx in data.tabs
+              img.tab-slider__img(class=(idx === 0 ? 'tab-slider__img--show fade-in-left' : 'fade-out-left') src=`${tab.img}` alt='Изображение')
+
+          .tab-slider__tab-text-container
+            span.tab-slider__tab-text-pointer
+            each tab, idx in data.tabs
+              p.tab-slider__tab-text(class=(idx === 0 ? 'tab-slider__tab-text--show scale-in' : 'scale-out'))= tab.text
+            
